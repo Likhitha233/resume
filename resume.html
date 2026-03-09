@@ -1,0 +1,527 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kolla Likhitha | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Poppins;
+background:#002841;
+color:white;
+overflow-x:hidden;
+}
+
+/* GRID BACKGROUND */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+linear-gradient(rgba(0,200,255,0.15) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,200,255,0.15) 1px, transparent 1px);
+background-size:60px 60px;
+z-index:-2;
+}
+
+#particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+position:fixed;
+width:100%;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+}
+
+nav h2{
+font-family:Orbitron;
+color:#00c8ff;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+nav a:hover{
+color:#00c8ff;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.profile{
+width:200px;
+height:200px;
+border-radius:50%;
+border:4px solid #00c8ff;
+box-shadow:0 0 30px #00c8ff;
+object-fit:cover;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:50px;
+font-family:Orbitron;
+color:#66e6ff;
+}
+
+.hero p{
+margin-top:10px;
+}
+
+.btn{
+margin-top:20px;
+padding:12px 30px;
+background:#00c8ff;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-weight:bold;
+color:black;
+}
+
+/* SECTIONS */
+
+section{
+padding:100px 10%;
+}
+
+.title{
+text-align:center;
+font-size:34px;
+color:#66e6ff;
+margin-bottom:30px;
+font-family:Orbitron;
+}
+
+/* CARDS */
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid #00c8ff;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+}
+
+.card:hover{
+box-shadow:0 0 15px #00c8ff;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+/* CONTACT */
+
+.contact-box{
+background:rgba(255,255,255,0.05);
+border:1px solid #00c8ff;
+padding:30px;
+border-radius:12px;
+max-width:400px;
+margin:auto;
+text-align:center;
+}
+
+.contact-box a{
+color:#66e6ff;
+text-decoration:none;
+}
+
+.space{
+margin-top:20px;
+}
+
+/* ONLINE PROFILES */
+
+.profiles-container{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.profile-card{
+background:rgba(255,255,255,0.05);
+border:1px solid #00c8ff;
+padding:20px 40px;
+border-radius:12px;
+color:#66e6ff;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
+}
+
+.profile-card:hover{
+background:#00c8ff;
+color:black;
+box-shadow:0 0 15px #00c8ff;
+transform:translateY(-5px);
+}
+
+/* CHATBOT */
+
+.chat-icon{
+position:fixed;
+bottom:25px;
+right:25px;
+width:70px;
+height:70px;
+border-radius:50%;
+background:#00c8ff;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+}
+
+.chat-icon img{
+width:40px;
+border-radius:50%;
+}
+
+.chatbox{
+position:fixed;
+bottom:110px;
+right:25px;
+width:320px;
+background:white;
+color:black;
+border-radius:10px;
+display:none;
+flex-direction:column;
+}
+
+.chat-header{
+background:#00c8ff;
+padding:10px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.bot-avatar{
+width:30px;
+height:30px;
+border-radius:50%;
+}
+
+.chat-body{
+height:220px;
+overflow-y:auto;
+padding:10px;
+}
+
+.chat-input{
+display:flex;
+}
+
+.chat-input input{
+flex:1;
+padding:10px;
+border:none;
+}
+
+.chat-input button{
+background:#00c8ff;
+border:none;
+padding:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<nav>
+
+<h2>Likhitha</h2>
+
+<div>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#certifications">Certifications</a>
+<a href="#achievements">Achievements</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+
+<section class="hero">
+
+<img src="Picture1.jpg" class="profile">
+
+<h1>Kolla Likhitha</h1>
+
+<p>Computer Science Engineering Student</p>
+
+<a href="resume.pdf" download class="btn">Download Resume</a>
+
+</section>
+
+
+<section id="about">
+
+<h2 class="title">About</h2>
+
+<div class="card">
+
+Computer Science Engineering student passionate about software engineering,
+data analysis and artificial intelligence. Actively solving Data Structures
+and Algorithms problems on LeetCode.
+
+</div>
+
+</section>
+
+
+<section id="education">
+
+<h2 class="title">Education</h2>
+
+<div class="card">
+B.Tech – Computer Science & Engineering<br>
+Alliance University<br>
+CGPA: 9.3 / 10<br>
+Expected Graduation: 2027
+</div>
+
+<div class="card">
+Intermediate – Sri Chaitanya Junior College<br>
+98.3% | 2023
+</div>
+
+<div class="card">
+10th – Jyothi Vidhya Niketan High School<br>
+97% | 2021
+</div>
+
+</section>
+
+
+<section id="skills">
+
+<h2 class="title">Technical Skills</h2>
+
+<div class="grid">
+
+<div class="card">Python, C</div>
+<div class="card">Data Structures & Algorithms</div>
+<div class="card">HTML, CSS, JavaScript</div>
+<div class="card">Pandas, NumPy, Excel, Power BI</div>
+<div class="card">SQL, DBMS</div>
+<div class="card">Git, GitHub, VS Code</div>
+
+</div>
+
+</section>
+
+
+<section id="projects">
+
+<h2 class="title">Projects</h2>
+
+<div class="card">
+Organic Pesticide Recommendation System (AI-Based)
+</div>
+
+<div class="card">
+AI-Based Games (Tic-Tac-Toe & Rock-Paper-Scissors)
+</div>
+
+<div class="card">
+Coffee Machine Product Design Prototype
+</div>
+
+</section>
+
+
+<section id="certifications">
+
+<h2 class="title">Certifications</h2>
+
+<div class="grid">
+
+<div class="card">Python for Data Science – Coursera</div>
+<div class="card">Machine Learning – NPTEL</div>
+<div class="card">Introduction to Database Systems – NPTEL</div>
+<div class="card">Introduction to Robotics – NPTEL</div>
+<div class="card">C++ Basic Structures – Coursera</div>
+<div class="card">Data Visualization using Excel – Coursera</div>
+
+</div>
+
+</section>
+
+
+<section id="achievements">
+
+<h2 class="title">Achievements</h2>
+
+<div class="card">Mathematical Quiz Participation – Pi Day</div>
+
+<div class="card">Technical Presentation Competition – Samskruthi 3.0</div>
+
+</section>
+
+
+<section id="contact">
+
+<h2 class="title">Contact</h2>
+
+<div class="contact-box">
+
+<p><strong>Email</strong></p>
+
+<a href="mailto:kollalikhitha2005@gmail.com">
+kollalikhitha2005@gmail.com
+</a>
+
+<p class="space"><strong>Phone</strong></p>
+
+<a href="tel:+916281216065">
++91-6281216065
+</a>
+
+</div>
+
+</section>
+
+
+<section id="profiles">
+
+<h2 class="title">Online Profiles</h2>
+
+<div class="profiles-container">
+
+<a href="https://github.com/Likhitha233" target="_blank" class="profile-card">
+GitHub
+</a>
+
+<a href="https://linkedin.com/in/kolla-likhitha-9a71a5292" target="_blank" class="profile-card">
+LinkedIn
+</a>
+
+<a href="https://leetcode.com/u/kollaLikhitha_04/" target="_blank" class="profile-card">
+LeetCode
+</a>
+
+</div>
+
+</section>
+
+
+<div class="chat-icon" onclick="toggleChat()">
+<img src="bot.png">
+</div>
+
+
+<div class="chatbox" id="chatbox">
+
+<div class="chat-header">
+<img src="bot.png" class="bot-avatar">
+Assistant
+</div>
+
+<div class="chat-body" id="chatBody"></div>
+
+<div class="chat-input">
+<input id="userInput" placeholder="Ask about skills...">
+<button onclick="send()">Send</button>
+</div>
+
+</div>
+
+
+<script>
+
+/* CHAT */
+
+function toggleChat(){
+let box=document.getElementById("chatbox")
+box.style.display=(box.style.display=="flex")?"none":"flex"
+}
+
+function send(){
+
+let input=document.getElementById("userInput").value
+let chat=document.getElementById("chatBody")
+
+chat.innerHTML+="<p><b>You:</b> "+input+"</p>"
+
+let reply="I didn't understand."
+
+let text=input.toLowerCase()
+
+if(text.includes("skills"))
+reply="Likhitha knows Python, C, HTML, CSS, JavaScript, SQL, Pandas and NumPy."
+
+else if(text.includes("projects"))
+reply="She built an AI pesticide system, AI games and a coffee machine prototype."
+
+else if(text.includes("education"))
+reply="She is pursuing B.Tech CSE at Alliance University with CGPA 9.3."
+
+chat.innerHTML+="<p><b>Bot:</b> "+reply+"</p>"
+
+document.getElementById("userInput").value=""
+
+}
+
+</script>
+
+</body>
+</html>
+```
